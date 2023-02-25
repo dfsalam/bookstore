@@ -7,6 +7,7 @@ const Navbar = () => {
   ];
   return (
     <nav>
+      <h1>Bookstore</h1>
       <ul>
         {links.map((link) => (
           <li key={link.text}>
