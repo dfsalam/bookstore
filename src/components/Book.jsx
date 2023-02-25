@@ -5,3 +5,8 @@ export default Book = ({ title, author}) => {
    </li> 
   );
 };
+
+Book.PropType = {
+  title: PropType.string.isRequired,
+  author: PropType.string.isRequired,
+};
