@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Books from '../routes/Books';
-import Authors from '../routes/Authors';
+import Categories from '../routes/Categories';
 import NotMatch from '../routes/NotMatch';
 import Layout from './Layout';
 import '../styles/App.css';
@@ -10,7 +10,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="books" element={<Books />} />
-        <Route path="authors" element={<Authors />} />
+        <Route path="categories" element={<Categories />} />
         <Route path="*" element={<NotMatch />} />
       </Route>
     </Routes>
