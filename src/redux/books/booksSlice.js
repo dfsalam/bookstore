@@ -8,15 +8,16 @@ const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    addBook: (state) => {
-      const book = {
-        item_id: 'item1', title: 'Python Data Analytics', author: 'Fabio Nelli', category: 'Python',
-      };
-      return {
-        ...state,
-        books: [...state.books, book],
-      };
-    },
+    addBook: (state, action) => ({
+      books: [
+        ...state.books,
+        {
+          id: Math.floor(Math.random() * 100),
+          title: action.payload.title,
+          author: action.payload.author,
+        },
+      ],
+    }),
     removeBook: (state, action) => {
       const itemId = action.payload;
       return {
