@@ -12,11 +12,17 @@ const booksSlice = createSlice({
       const book = {
         item_id: 'item1', title: 'Python Data Analytics', author: 'Fabio Nelli', category: 'Python',
       };
-      state.books.push(book);
+      return {
+        ...state,
+        books: [...state.books, book],
+      };
     },
     removeBook: (state, action) => {
       const itemId = action.payload;
-      state.books = state.cartItems.filter((item) => item.id !== itemId);
+      return {
+        ...state,
+        books: state.books.filter((item) => item.id !== itemId),
+      };
     },
   },
 });
