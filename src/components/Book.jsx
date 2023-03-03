@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
+import Button from './Button';
 
-export default function Book({ title, author }) {
+export default function Book({
+  title, author, itemId,
+}) {
   return (
-    <li>
+    <li id={itemId}>
       Title:
       {title}
       {' '}
       Author:
       {author}
-      <button type="button">Remove</button>
+      <Button btnName="Remove" />
     </li>
   );
 }
@@ -16,4 +19,5 @@ export default function Book({ title, author }) {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
 };

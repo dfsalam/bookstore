@@ -1,5 +1,10 @@
+import Button from '../components/Button';
+
 export default function Categories() {
   return (
-    <button type="button">Check status</button>
+    <>
+      <Button btnName="Check status" />
+      <div id="categories" />
+    </>
   );
 }

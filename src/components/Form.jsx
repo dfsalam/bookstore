@@ -1,9 +1,11 @@
+import Button from './Button';
+
 export default function Form() {
   return (
-    <form>
-      <input type="text" placeholder="Book title" />
-      <input type="text" placeholder="Author" />
-      <button type="submit">Submit</button>
+    <form id="addBookForm">
+      <input type="text" name="title" placeholder="Book title" required />
+      <input type="text" name="author" placeholder="Author" required />
+      <Button btnName="Add book" />
     </form>
   );
 }
