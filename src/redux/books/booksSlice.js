@@ -1,27 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/6WW9pLyM5KcNpiSeZbhV/books';
 const initialState = {
-  books: [
-    {
-      itemId: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      itemId: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      itemId: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
+  isLoading: true,
 };
+
+export const getBooksItems = createAsyncThunk('books/getBooksItems',
+  () => fetch(url)
+    .then((resp) => resp.json())
+    .catch((err) => console.log(err)));
 
 const booksSlice = createSlice({
   name: 'books',
@@ -33,6 +21,21 @@ const booksSlice = createSlice({
     removeBook: (state, action) => ({
       ...state,
       books: state.books.filter((book) => book.itemId !== action.payload),
+    }),
+  },
+  extraReducers: {
+    [getBooksItems.pending]: (state) => ({
+      ...state,
+      isLoading: true,
+    }),
+    [getBooksItems.fulfilled]: (state, action) => ({
+      ...state,
+      isLoading: false,
+      books: action.payload,
+    }),
+    [getBooksItems.rejected]: (state) => ({
+      ...state,
+      isLoading: false,
     }),
   },
 });
