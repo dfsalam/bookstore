@@ -61,6 +61,7 @@ const Button = ({ btnName }) => {
       <button
         type="button"
         onClick={({ target }) => handlerRemove(target)}
+        className="book_btn blue_font remove_btn"
       >
         {btnName}
       </button>
