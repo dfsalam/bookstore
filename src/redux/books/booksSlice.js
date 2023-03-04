@@ -7,39 +7,67 @@ const initialState = {
 };
 
 export const getBooksItems = createAsyncThunk('books/getBooksItems',
-  () => fetch(url)
-    .then((resp) => resp.json())
-    .catch((err) => console.log(err)));
+  async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    const keys = Object.keys(data);
+    const newBooks = [];
+    let item = {};
+    keys.forEach((e) => {
+      item = {
+        item_id: e,
+        title: data[e][0].title,
+        author: data[e][0].author,
+        category: data[e][0].category,
+      };
+      newBooks.push(item);
+    });
+    return newBooks;
+  });
+
+export const addBook = createAsyncThunk('books/addBook',
+  async (data) => {
+    await fetch(url, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return data;
+  });
+export const removeBook = createAsyncThunk('books/removeBook',
+  async (data) => {
+    await fetch(url, {
+      method: 'POST', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    return data;
+  });
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    addBook: (state, action) => ({
-      books: [...state.books, action.payload],
-    }),
-    removeBook: (state, action) => ({
-      ...state,
-      books: state.books.filter((book) => book.itemId !== action.payload),
-    }),
-  },
-  extraReducers: {
-    [getBooksItems.pending]: (state) => ({
-      ...state,
-      isLoading: true,
-    }),
-    [getBooksItems.fulfilled]: (state, action) => ({
-      ...state,
-      isLoading: false,
-      books: action.payload,
-    }),
-    [getBooksItems.rejected]: (state) => ({
-      ...state,
-      isLoading: false,
-    }),
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBooksItems.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(getBooksItems.fulfilled, (state, action) => ({
+        ...state,
+        isLoading: false,
+        books: action.payload,
+      }))
+      .addCase(getBooksItems.rejected, (state) => ({
+        ...state,
+        isLoading: false,
+      }));
   },
 });
-
-export const { addBook, removeBook } = booksSlice.actions;
 
 export default booksSlice.reducer;
