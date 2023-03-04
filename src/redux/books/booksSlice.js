@@ -37,15 +37,15 @@ export const addBook = createAsyncThunk('books/addBook',
     return data;
   });
 export const removeBook = createAsyncThunk('books/removeBook',
-  async (data) => {
-    await fetch(url, {
-      method: 'POST', // or 'PUT'
+  async (id) => {
+    const deleteUrl = `${url}/${id}`;
+    await fetch(deleteUrl, {
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
     });
-    return data;
+    return id;
   });
 
 const booksSlice = createSlice({
@@ -66,6 +66,13 @@ const booksSlice = createSlice({
       .addCase(getBooksItems.rejected, (state) => ({
         ...state,
         isLoading: false,
+      }))
+      .addCase(addBook.fulfilled, (state, action) => ({
+        books: [...state.books, action.payload],
+      }))
+      .addCase(removeBook.fulfilled, (state, action) => ({
+        ...state,
+        books: state.books.filter((book) => book.item_id !== action.payload),
       }));
   },
 });
