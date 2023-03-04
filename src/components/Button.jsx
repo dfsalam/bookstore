@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBook, removeBook } from '../redux/books/booksSlice';
-import addBookAPI from './functions/addBookAPI';
 
 const Button = ({ btnName }) => {
   const dispatch = useDispatch();
@@ -23,7 +22,6 @@ const Button = ({ btnName }) => {
       category: 'Empty',
     };
     dispatch(addBook(data));
-    addBookAPI(data);
     frmAddBook.reset();
     frmAddBook.title.focus();
   };
