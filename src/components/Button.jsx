@@ -16,7 +16,7 @@ const Button = ({ btnName }) => {
     const authorData = frmAddBook.author.value.trim();
     const id = uuidv4();
     const data = {
-      itemId: id,
+      item_id: id,
       title: titleData,
       author: authorData,
       category: 'Empty',
