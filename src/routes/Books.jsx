@@ -13,7 +13,7 @@ export default function Books() {
 
   useEffect(() => {
     dispatch(getBooksItems());
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return (
