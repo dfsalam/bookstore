@@ -14,7 +14,7 @@
 }
 
 .book_main {
-  padding: 2rem 0 1.75rem 1.688rem;  
+  padding: 2rem 0 1.75rem 1.688rem;
 }
 
 .book_buttons {
@@ -23,7 +23,7 @@
 
 .book_right {
   display: flex;
-  justify-content: flex-end;   
+  justify-content: flex-end;
 }
 
 .book_title {
@@ -124,7 +124,7 @@
 
 /* Current chapter */
 .book_end {
-  align-self: center;  
+  align-self: center;
 }
 
 .book_chapter {
