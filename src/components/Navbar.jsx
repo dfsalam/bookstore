@@ -1,20 +1,22 @@
 import { NavLink } from 'react-router-dom';
+import '../styles/Navbar.css';
 
 const Navbar = () => {
   const links = [
-    { path: 'books', text: 'Books' },
-    { path: 'categories', text: 'Categories' },
+    { path: 'books', text: 'BOOKS' },
+    { path: 'categories', text: 'CATEGORIES' },
   ];
   return (
     <nav>
-      <h1>Bookstore</h1>
-      <ul>
+      <ul className="nav_list">
+        <h1 className="nav_title">Bookstore CMS</h1>
         {links.map((link) => (
-          <li key={link.text}>
+          <li key={link.text} className="nav_list_list">
             <NavLink to={link.path}>{link.text}</NavLink>
           </li>
         ))}
       </ul>
+      <img className="nav_img" src="./images/user.png" alt="User" />
     </nav>
   );
 };

@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;400;700&display=swap');
+
+.flex_col {
+  display: flex;
+  flex-direction: column;
+}
+
+.book_container {
+  display: flex;
+  border: 1px solid #e8e8e8;
+  justify-content: space-between;
+  margin: 0.938rem 6.25rem;
+  background-color: #fff;
+}
+
+.book_main {
+  padding: 2rem 0 1.75rem 1.688rem;
+}
+
+.book_buttons {
+  margin-top: 1.313rem;
+}
+
+.book_right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.book_title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
+  margin: 0;
+  margin-top: 0.25rem;
+  width: 394px;
+}
+
+.book_category {
+  opacity: 0.5;
+  font-family: 'Montserrat', serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+  margin: 0;
+}
+
+.book_author {
+  margin: 0;
+}
+
+.blue_font {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.book_btn {
+  background: none;
+  border: none;
+}
+
+.remove_btn {
+  border-left: #e8e8e8 solid 1px;
+  border-right: #e8e8e8 solid 1px;
+  padding: 0 0.938rem;
+}
+
+.edit_btn {
+  padding-left: 0.938rem;
+}
+
+.comment_btn {
+  padding-right: 0.938rem;
+  padding-left: 0;
+}
+
+/* Percent */
+.book_middle {
+  align-self: center;
+  padding-right: 4.938rem;
+  border-right: 1px solid #e8e8e8;
+}
+
+.book_percent {
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: 'Montserrat', serif;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+  margin-right: 0;
+}
+
+.book_completed {
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: 'Montserrat', serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+  margin-right: 0;
+}
+
+/* Current chapter */
+.book_end {
+  align-self: center;
+}
+
+.book_chapter {
+  margin: 0.063rem 0 0 3.688rem;
+  padding-right: 12.813rem;
+  opacity: 0.5;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.book_chapter_name {
+  margin: 0.438rem 0 0.25rem 3.688rem;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: var(--black-two);
+}
+
+.book_update_btn {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  width: 11.5rem;
+  margin: 0.75rem 0 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-style: hidden;
+  border-radius: 3px;
+  background-color: #0290ff;
+}

@@ -3,7 +3,6 @@ import Books from '../routes/Books';
 import Categories from '../routes/Categories';
 import NotMatch from '../routes/NotMatch';
 import Layout from './Layout';
-import '../styles/App.css';
 
 function App() {
   return (
