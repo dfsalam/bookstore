@@ -73,8 +73,9 @@ const Button = ({ btnName }) => {
       <button
         type="button"
         onClick={() => handlerAdd()}
+        className="add_book_btn"
       >
-        {btnName}
+        {btnName.toUpperCase()}
       </button>
     );
   }

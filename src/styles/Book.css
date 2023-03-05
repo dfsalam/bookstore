@@ -8,8 +8,9 @@
 .book_container {
   display: flex;
   border: 1px solid #e8e8e8;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin: 0.938rem 6.25rem;
+  background-color: #fff;
 }
 
 .book_main {
@@ -22,7 +23,7 @@
 
 .book_right {
   display: flex;
-  margin-left: 10.438rem;
+  justify-content: flex-end;   
 }
 
 .book_title {
@@ -123,10 +124,12 @@
 
 /* Current chapter */
 .book_end {
-  align-self: center;
+  align-self: center;  
 }
+
 .book_chapter {
-  margin: 0.063rem 3.625rem 0 3.688rem;
+  margin: 0.063rem 0 0 3.688rem;
+  padding-right: 12.813rem;
   opacity: 0.5;
   font-family: 'Roboto Slab', serif;
   font-size: 0.813rem;
@@ -139,7 +142,7 @@
 }
 
 .book_chapter_name {
-  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  margin: 0.438rem 0 0.25rem 3.688rem;
   font-family: 'Roboto Slab', serif;
   font-size: 1rem;
   font-weight: 300;

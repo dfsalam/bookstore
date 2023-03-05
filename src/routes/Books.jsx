@@ -23,7 +23,7 @@ export default function Books() {
     );
   }
   return (
-    <div>
+    <div className="root_container">
       <BookCntr />
       <Form />
     </div>
